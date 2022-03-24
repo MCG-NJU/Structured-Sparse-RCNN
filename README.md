@@ -189,17 +189,15 @@ You can download pretrained models here:
 
 #### [300 queries](https://drive.google.com/drive/folders/1u2zIvndDwMQ2PyMbV-c83z5V2O9D3gmi?usp=sharing)
 
+#### [800 queries](https://drive.google.com/drive/folders/1ASRLwqSPdP3xtPh1uvwQ9EclDCyELv0d?usp=sharing)
+
 ### OI V4
 
-#### 300 queries
-
-
+#### [300 queries](https://drive.google.com/drive/folders/10sHbnS97kMCHv9u9aMjMVqsgN_KH7jr6?usp=sharing)
 
 ### OI V6
 
-#### [300 queries](https://drive.google.com/file/d/1Qgo2iWxdJ_iLmasW0Ov9Kp6HwIKfO4mg/view?usp=sharing)
-
-
+#### [300 queries](https://drive.google.com/drive/folders/1CFeQxVVAvz8oZ2SWaxDYjbx_4OQ6sYI6?usp=sharing)
 
 ## Results
 
