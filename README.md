@@ -230,3 +230,13 @@ For this paper, I'm extremely grateful to my advisor [Prof. Limin Wang](https://
 
 ## Citations
 
+```
+@article{DBLP:journals/corr/abs-2106-10815,
+  author    = {Yao Teng and
+               Limin Wang},
+  title     = {Structured Sparse {R-CNN} for Direct Scene Graph Generation},
+  journal   = {CoRR},
+  volume    = {abs/2106.10815},
+  year      = {2021}
+}
+```
