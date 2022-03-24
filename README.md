@@ -189,7 +189,7 @@ You can download pretrained models here:
 
 #### 300 queries
 
-[Our model](https://drive.google.com/drive/folders/1xZA5VcN9MfOM0-fSnJsHf1fGgmJf7u4Q?usp=sharing) trained on VG dataset. The details for training are presented in our paper. Put the file into './Outputs/1024_8bs_300q_100_more_abla_10/' for testing.
+Our model trained on VG dataset. The details for training are presented in our paper. Put the file into './Outputs/1024_8bs_300q_100_more_abla_10/' for testing.
 
 
 
