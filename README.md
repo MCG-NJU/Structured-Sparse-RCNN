@@ -197,7 +197,7 @@ You can download pretrained models here:
 
 ### OI V6
 
-#### 300 queries
+#### [300 queries](https://drive.google.com/file/d/1Qgo2iWxdJ_iLmasW0Ov9Kp6HwIKfO4mg/view?usp=sharing)
 
 
 
