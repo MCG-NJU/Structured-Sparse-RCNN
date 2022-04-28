@@ -57,6 +57,8 @@ For the datasets and pretrained backbone weights preparation, please follow: [BG
 
 ### VG
 
+On VG, we notice ~0.2 R@100 noise for our model with 300 queries.
+
 To train the model with 300 triplet queries in the paper, run this command. The results are `R@100: 36.9; zR@100: 3.7; mR@100: 10.0`: (8 RTX 2080ti 11G)
 
 ```bash
