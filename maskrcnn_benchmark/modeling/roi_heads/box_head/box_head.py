@@ -322,12 +322,12 @@ def make_pair_prediction_unit(
                     count_ent_like_bg_num=count_ent_like_bg_num,
                     gt_entity_num=len(ent_labels),
                     gt_rel_num=len(sub_id),
-                    X=X+sum_ent_psedo_label, Y=Y+sum_ent_psedo_label,
+                    X=X, Y=Y,
                     pure_ent_pred_bboxes_i=pure_ent_pred_bboxes_i,
                     pure_ent_image_size_xyxy_tgt=pure_ent_image_size_xyxy_tgt,
                     pure_ent_score_class_i=score_class_i,
                     pure_ent_score_dist_label_i=substitute_class_logits_i,
-                    )
+                    ) #X=X+sum_ent_psedo_label, Y=Y+sum_ent_psedo_label,
             hungarian_targets.append(hungarian_target)
             sum_ent_psedo_label += cur_ent_num
     return hungarian_targets
