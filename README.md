@@ -59,13 +59,13 @@ For the datasets and pretrained backbone weights preparation, please follow: [BG
 
 On VG, we notice ~0.2 R@100 noise for our model with 300 queries.
 
-To train the model with 300 triplet queries in the paper, run this command. The results are `R@100: 36.9; zR@100: 3.7; mR@100: 10.0`: (8 RTX 2080ti 11G)
+To train the model with 300 triplet queries, run this command. The results are `R@100: 36.9; zR@100: 3.7; mR@100: 10.0`: (8 RTX 2080ti 11G)
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --master_port 10020 --nproc_per_node=8 tools/relation_train_net.py --config-file "configs/simrel_e2e_relation_X_101_32_8_FPN_1x.yaml" MODEL.ROI_RELATION_HEAD.USE_GT_BOX False MODEL.ROI_RELATION_HEAD.USE_GT_OBJECT_LABEL False MODEL.ROI_RELATION_HEAD.PREDICTOR CausalAnalysisPredictor MODEL.ROI_RELATION_HEAD.CAUSAL.EFFECT_TYPE none MODEL.ROI_RELATION_HEAD.CAUSAL.FUSION_TYPE sum MODEL.ROI_RELATION_HEAD.CAUSAL.CONTEXT_LAYER motifs SOLVER.IMS_PER_BATCH 8 TEST.IMS_PER_BATCH 8 SOLVER.VAL_PERIOD 12000 SOLVER.MAX_ITER 80000 SOLVER.STEPS '(47000, 64000)' SOLVER.BASE_LR 0.000008 SOLVER.OPTIMIZER "ADAMW" MODEL.PRETRAINED_DETECTOR_CKPT checkpoints/pretrained_faster_rcnn/model_final.pth OUTPUT_DIR Outputs/real025kl_newe2rposition_fullobjbranch_300q_smalldyconv_prequeryaug9_norel_hardlabel MODEL.ROI_BOX_HEAD.MLP_HEAD_DIM 1024 MODEL.SimrelRCNN.ENABLE_BG_OBJ False MODEL.SimrelRCNN.ENABLE_REL_X2Y True MODEL.SimrelRCNN.REL_DIM 256 MODEL.SimrelRCNN.NUM_PROPOSALS 300 MODEL.SimrelRCNN.NUM_HEADS 6 MODEL.SimrelRCNN.REL_STACK_NUM 6 MODEL.SimrelRCNN.TRIPLET_MASK_WEIGHT 1.0 MODEL.SimrelRCNN.FREEZE_BACKBONE True MODEL.SimrelRCNN.CROSS_OBJ_FEAT_FUSION False MODEL.SimrelRCNN.CLASS_WEIGHT 1.333 MODEL.SimrelRCNN.L1_WEIGHT 5.0 MODEL.SimrelRCNN.GIOU_WEIGHT 2.0 GLOVE_DIR '' MODEL.SimrelRCNN.ENABLE_FREQ False MODEL.SimrelRCNN.ENABLE_QUERY_REVERSE False MODEL.SimrelRCNN.USE_REFINE_OBJ_FEATURE True MODEL.SimrelRCNN.FREEZE_PUREE_OBJDET False MODEL.SimrelRCNN.PURE_ENT_NUM_PROPOSALS 100 MODEL.SimrelRCNN.ENABLE_MASK_BRANCH False MODEL.SimrelRCNN.KL_BRANCH_WEIGHT 0.25 MODEL.SimrelRCNN.ENABLE_KL_BRANCH True MODEL.SimrelRCNN.POSI_ENCODE_DIM 64 MODEL.SimrelRCNN.REL_CLASS_WEIGHT 1.334 MODEL.SimrelRCNN.PURE_ENT_CLASS_WEIGHT 2.0 MODEL.SimrelRCNN.PURE_ENT_GIOU_WEIGHT 2.0 MODEL.SimrelRCNN.PURE_ENT_L1_WEIGHT 5.0 MODEL.SimrelRCNN.AUXILIARY_BRANCH True MODEL.SimrelRCNN.AUXILIARY_BRANCH_SELECT_ENT_MAX_NUM 25 MODEL.SimrelRCNN.AUXILIARY_BRANCH_START 11 MODEL.SimrelRCNN.ENABLE_ENT_PROP True MODEL.ROI_RELATION_HEAD.CAUSAL.EFFECT_ANALYSIS False MODEL.SimrelRCNN.USE_CROSS_RANK False MODEL.SimrelRCNN.DISABLE_KQ_FUSION_SELFATTEN False MODEL.SimrelRCNN.DIM_ENT_PRE_CLS 256 MODEL.SimrelRCNN.DIM_ENT_PRE_REG 256 MODEL.SimrelRCNN.ONE_REL_CONV True MODEL.SimrelRCNN.ENABLE_BATCH_REDUCTION True MODEL.SimrelRCNN.USE_HARD_LABEL_KLMATCH True MODEL.SimrelRCNN.DISABLE_OBJ2REL_LOSS True
 ```
 
-To train the model with 800 triplet queries in the paper, run this command. The results are `R@100: 38.4; zR@100: 4.0; mR@100: 10.3`: (8 V100 32G)
+To train the model with 800 triplet queries, run this command. The results are `R@100: 38.4; zR@100: 4.0; mR@100: 10.3`: (8 V100 32G)
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --master_port 10020 --nproc_per_node=8 tools/relation_train_net.py --config-file "configs/simrel_e2e_relation_X_101_32_8_FPN_1x.yaml" MODEL.ROI_RELATION_HEAD.USE_GT_BOX False MODEL.ROI_RELATION_HEAD.USE_GT_OBJECT_LABEL False MODEL.ROI_RELATION_HEAD.PREDICTOR CausalAnalysisPredictor MODEL.ROI_RELATION_HEAD.CAUSAL.EFFECT_TYPE none MODEL.ROI_RELATION_HEAD.CAUSAL.FUSION_TYPE sum MODEL.ROI_RELATION_HEAD.CAUSAL.CONTEXT_LAYER motifs SOLVER.IMS_PER_BATCH 8 TEST.IMS_PER_BATCH 8 SOLVER.VAL_PERIOD 12000 SOLVER.MAX_ITER 80000 SOLVER.STEPS '(47000, 64000)' SOLVER.BASE_LR 0.000008 SOLVER.OPTIMIZER "ADAMW" MODEL.PRETRAINED_DETECTOR_CKPT checkpoints/pretrained_faster_rcnn/model_final.pth OUTPUT_DIR Outputs/real025kl_newe2rposition_fullobjbranch_800q_smalldyconv_prequeryaug9_norel_hardlabel MODEL.ROI_BOX_HEAD.MLP_HEAD_DIM 1024 MODEL.SimrelRCNN.ENABLE_BG_OBJ False MODEL.SimrelRCNN.ENABLE_REL_X2Y True MODEL.SimrelRCNN.REL_DIM 256 MODEL.SimrelRCNN.NUM_PROPOSALS 800 MODEL.SimrelRCNN.NUM_HEADS 6 MODEL.SimrelRCNN.REL_STACK_NUM 6 MODEL.SimrelRCNN.TRIPLET_MASK_WEIGHT 1.0 MODEL.SimrelRCNN.FREEZE_BACKBONE True MODEL.SimrelRCNN.CROSS_OBJ_FEAT_FUSION False MODEL.SimrelRCNN.CLASS_WEIGHT 1.333 MODEL.SimrelRCNN.L1_WEIGHT 5.0 MODEL.SimrelRCNN.GIOU_WEIGHT 2.0 GLOVE_DIR '' MODEL.SimrelRCNN.ENABLE_FREQ False MODEL.SimrelRCNN.ENABLE_QUERY_REVERSE False MODEL.SimrelRCNN.USE_REFINE_OBJ_FEATURE True MODEL.SimrelRCNN.FREEZE_PUREE_OBJDET False MODEL.SimrelRCNN.PURE_ENT_NUM_PROPOSALS 100 MODEL.SimrelRCNN.ENABLE_MASK_BRANCH False MODEL.SimrelRCNN.KL_BRANCH_WEIGHT 0.25 MODEL.SimrelRCNN.ENABLE_KL_BRANCH True MODEL.SimrelRCNN.POSI_ENCODE_DIM 64 MODEL.SimrelRCNN.REL_CLASS_WEIGHT 1.334 MODEL.SimrelRCNN.PURE_ENT_CLASS_WEIGHT 2.0 MODEL.SimrelRCNN.PURE_ENT_GIOU_WEIGHT 2.0 MODEL.SimrelRCNN.PURE_ENT_L1_WEIGHT 5.0 MODEL.SimrelRCNN.AUXILIARY_BRANCH True MODEL.SimrelRCNN.AUXILIARY_BRANCH_SELECT_ENT_MAX_NUM 25 MODEL.SimrelRCNN.AUXILIARY_BRANCH_START 11 MODEL.SimrelRCNN.ENABLE_ENT_PROP True MODEL.ROI_RELATION_HEAD.CAUSAL.EFFECT_ANALYSIS False MODEL.SimrelRCNN.USE_CROSS_RANK False MODEL.SimrelRCNN.DISABLE_KQ_FUSION_SELFATTEN False MODEL.SimrelRCNN.DIM_ENT_PRE_CLS 256 MODEL.SimrelRCNN.DIM_ENT_PRE_REG 256 MODEL.SimrelRCNN.ONE_REL_CONV True MODEL.SimrelRCNN.ENABLE_BATCH_REDUCTION True MODEL.SimrelRCNN.USE_HARD_LABEL_KLMATCH True MODEL.SimrelRCNN.DISABLE_OBJ2REL_LOSS True
@@ -191,7 +191,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --master
 
 ## Pre-trained Models
 
-You can download pretrained models here:
+The pre-trained backbone weights for our models are aligned with the ones for faster r-cnn. This can ensure a fair comparison of backbone to other SGG methods. These weights can be found in: [BGNN-SGG](https://github.com/SHTUPLUS/PySGG) (OI) and [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) (VG).
+
+You can download our pretrained models here:
 
 ### VG
 
@@ -206,8 +208,6 @@ You can download pretrained models here:
 ### OI V6
 
 #### [300 queries](https://drive.google.com/drive/folders/1CFeQxVVAvz8oZ2SWaxDYjbx_4OQ6sYI6?usp=sharing)
-
-Other pre-trained model weights can be found in: [BGNN-SGG](https://github.com/SHTUPLUS/PySGG) (OI) and [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) (VG). 
 
 ## Results
 
