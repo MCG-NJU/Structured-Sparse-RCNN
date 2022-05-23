@@ -207,6 +207,8 @@ You can download pretrained models here:
 
 #### [300 queries](https://drive.google.com/drive/folders/1CFeQxVVAvz8oZ2SWaxDYjbx_4OQ6sYI6?usp=sharing)
 
+Other pre-trained model weights can be found in: [BGNN-SGG](https://github.com/SHTUPLUS/PySGG) (OI) and [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) (VG). 
+
 ## Results
 
 Our model achieves the following performance on :
