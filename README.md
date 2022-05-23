@@ -226,6 +226,10 @@ Our model achieves the following performance on :
 | Our model+LA    | 18.4    | 23.3     | 26.5     | 1.9      | 2.9         | 4.0       | 13.5       | 17.9       | 21.4        |
 | Our model\*+LA    | 18.2   | 23.7    | 27.3     | 2.0     | 3.1       | 4.5     | 13.7        | 18.6       | 22.5        |
 
+## Hint
+
+- The mAP evaluator of object detection in our model: Because our model is directly predicting the object pairs, the AP evaluator in Cocoapi is actually not comparable it, so its mAP cannot be properly shown in log.txt. This mAP indicators of objects is not useful for our paradigm. If you want to obtain the exact mAP of individual object predictions from these predicted object pairs, you need to modify the codes of Cocoapi to select the individual objects from those pairs.
+
 ## Acknowledgement
 
 Our code is mainly based on: [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), [SparseR-CNN](https://github.com/PeizeSun/SparseR-CNN) and [BGNN-SGG](https://github.com/SHTUPLUS/PySGG).
