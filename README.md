@@ -1,6 +1,6 @@
 # Structured Sparse R-CNN for Direct Scene Graph Generation
 
-Our paper [Structured Sparse R-CNN for Direct Scene Graph Generation](https://arxiv.org/abs/2106.10815) has been accepted by CVPR 2022.
+Our paper [Structured Sparse R-CNN for Direct Scene Graph Generation](https://openaccess.thecvf.com/content/CVPR2022/papers/Teng_Structured_Sparse_R-CNN_for_Direct_Scene_Graph_Generation_CVPR_2022_paper.pdf) has been accepted by CVPR 2022.
 
 
 ## Requirements
@@ -239,11 +239,12 @@ For this paper, I'm extremely grateful to my advisor [Prof. Limin Wang](https://
 ## Citations
 
 ```
-@inproceedings{ssrcnnsgg22cvpr,
-  author    = {Yao Teng and
-               Limin Wang},
-  title     = {Structured Sparse {R-CNN} for Direct Scene Graph Generation},
-  booktitle = {{CVPR}},
-  year      = {2022}
+@InProceedings{Teng_2022_CVPR,
+    author    = {Teng, Yao and Wang, Limin},
+    title     = {Structured Sparse R-CNN for Direct Scene Graph Generation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {19437-19446}
 }
 ```
